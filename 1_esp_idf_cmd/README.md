@@ -11,7 +11,7 @@ Los pasos anteriores crean:
 
 - El componente `main` que está compuesto por:
   - El archivo fuente `hola_mundo.c` que contiene la función `app_main`.
-  - Un archivo de registro `CmakeLists.txt`.
+  - El archivo de registro `CmakeLists.txt`.
 - Un archivo `CmakeLists.txt` para el proyecto.
 
 3. Modificar el contenido de `hola_mundo.c`:
@@ -37,7 +37,7 @@ Los pasos anteriores crean:
 - El archivo `sdkconfig` que contiene la configuración del proyecto.
 - El directorio `build`.
 
-Hay que utilizar el siguiente archivo [.gitignore](https://github.com/espressif/esp-idf/blob/release/v5.2/.gitignore) para ignorar la carpeta `build` al trabajar con Git.
+9. Utilizar el siguiente archivo [.gitignore](https://github.com/espressif/esp-idf/blob/release/v5.2/.gitignore) para no observar la carpeta `build` con Git.
 
 ## Compilar el proyecto
 
@@ -51,22 +51,32 @@ El paso anterior crea los archivos binarios del proyecto:
 
 ## Grabar el proyecto
 
-1. Ejecutar `idf.py -p COM10 flash`.
-
-El paso anterior graba los archivos binarios del proyecto en la memoria Flash del ESP-32. Siempre y cuando, se haya manteniendo presionado `IO0` para habilitar el `Firmware Download Mode` en el SoC.
-
-![SoC](soc.png)
-
-El puerto serial asociado al ESP-32 se puede consultar en el `Administrador de Dispositivos` de Windows.
+1. Encontrar el puerto serial asociado al ESP-32 en el `Administrador de Dispositivos` de Windows.
 
 ![Puerto serial](puerto_serial.png)
+
+2. Mantener presionado el botón `IO0`.
+3. Ejecutar `idf.py -p COM10 flash`.
+4. Liberar el botón `IO0`.
+
+Los pasos anteriores:
+
+- Reinician al ESP-32 en el modo `DOWNLOAD_BOOT`.
+- Graban los archivos binarios del proyecto en la memoria Flash del SoC.
+
+![SoC](soc.png)
 
 ## Utilizar el monitor
 
 1. Ejecutar `idf.py -p COM10 monitor`.
 
-El paso anterior va a reiniciar el ESP-32 en el `Execution Mode` para monitorear su salida.
+El paso anterior reinicia al ESP-32 en el `SPI_FAST_FLASH_BOOT`.
 
 ![Monitor](monitor.png)
 
 2. Presionar `CTRL+]` para cerrar el monitor.
+
+## Documentación oficial
+
+- [IDF Frontend - idf.py](https://docs.espressif.com/projects/esp-idf/en/v5.2.2/esp32/api-guides/tools/idf-py.html).
+- [IDF Monitor](https://docs.espressif.com/projects/esp-idf/en/v5.2.2/esp32/api-guides/tools/idf-monitor.html).
