@@ -2,10 +2,11 @@
 
 ## Reiniciar al ESP-32 en el modo DOWNLOAD_BOOT o SPI_FAST_FLASH_BOOT
 
-1. Ejecutar `python -m serial.tools.miniterm COM10 115200`.
-2. Mantener presionado el botón `IO0`.
-3. Presionar el botón `EN` durante 1 segundo y liberarlo.
-4. Liberar el botón `IO0`.
+1. Abrir la `ESP-IDF CMD`.
+2. Ejecutar `python -m serial.tools.miniterm COM10 115200`.
+3. Mantener presionado el botón `IO0`.
+4. Presionar el botón `EN` durante 1 segundo y liberarlo.
+5. Liberar el botón `IO0`.
 
 ![DOWNLOAD_BOOT](download_boot.png)
 
@@ -31,12 +32,13 @@
 
 ## Grabar los archivos binarios del proyecto
 
-1. Copiar el archivo `bootloader.bin` que está en `build/bootloader` al directorio actual.
-2. Copiar el archivo `partition-table.bin` que está en `build/partition_table` al directorio actual.
-3. Copiar el archivo `hola_mundo.bin` que está en `build` al directorio actual.
-4. Mantener presionado el botón `IO0`.
-5. Ejecutar `esptool.py --chip esp32 --port COM10 write_flash 0x1000 bootloader.bin 0x8000 partition-table.bin 0x10000 hola_mundo.bin`.
-6. Liberar el botón `IO0`.
+1. Ejecutar `cd C:\Users\achaparro\curso-dev-esp-idf\hola_mundo`.
+2. Ejecutar `copy /Y .\build\bootloader\bootloader.bin .\bootloader.bin`.
+3. Ejecutar `copy /Y .\build\partition_table\partition-table.bin .\partition-table.bin`.
+4. Ejecutar `copy /Y .\build\hola_mundo.bin .\hola_mundo.bin`.
+5. Mantener presionado el botón `IO0`.
+6. Ejecutar `esptool.py --chip esp32 --port COM10 write_flash 0x1000 bootloader.bin 0x8000 partition-table.bin 0x10000 hola_mundo.bin`.
+7. Liberar el botón `IO0`.
 
 ![write_flash](write_flash.png)
 
