@@ -381,8 +381,8 @@ CONFIG_PARTITION_TABLE_MD5=y
 #
 # STA Configuration
 #
-CONFIG_ESP_WIFI_REMOTE_AP_SSID="FV-IOT"
-CONFIG_ESP_WIFI_REMOTE_AP_PASSWORD="FVVR#iot1980"
+CONFIG_ESP_WIFI_REMOTE_AP_SSID="otherapssid"
+CONFIG_ESP_WIFI_REMOTE_AP_PASSWORD="otherappassword"
 # end of STA Configuration
 # end of Example Configuration
 
