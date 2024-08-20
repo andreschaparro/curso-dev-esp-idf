@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "iot_button.h"
 
-#define BOOT_BUTTON_NUM GPIO_NUM_0
+#define BOOT_BUTTON_NUM GPIO_NUM_0 // Most development boards have "boot" button attached to GPIO0
 #define BUTTON_ACTIVE_LEVEL 0
 
 const char *button_event_table[] = {

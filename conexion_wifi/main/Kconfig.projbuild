@@ -1,0 +1,20 @@
+menu "Example Configuration"
+    
+    menu "STA Configuration"
+        comment "STA Configuration"
+        
+        config ESP_WIFI_REMOTE_AP_SSID
+            string "WiFi Remote AP SSID"
+            default "otherapssid"
+            help
+                SSID (network name) for the example's sta to connect to.
+
+        config ESP_WIFI_REMOTE_AP_PASSWORD
+            string "WiFi Remote AP Password"
+            default "otherappassword"
+            help
+                WiFi password for the example to use.
+
+    endmenu
+
+endmenu

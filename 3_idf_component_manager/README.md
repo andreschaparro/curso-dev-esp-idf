@@ -1,6 +1,6 @@
 # Capítulo 3: IDF Component Manager
 
-El sitio [The ESP Component Registry](https://components.espressif.com/) almacena componentes que podemos utilizar en nuestros proyectos.
+El sitio [The ESP Component Registry](https://components.espressif.com/) tiene componentes que podemos utilizar en nuestros proyectos.
 
 ![The ESP Component Registry](the_esp_component_registry.png)
 
@@ -20,6 +20,8 @@ El sitio [The ESP Component Registry](https://components.espressif.com/) almacen
 12. Ejecutar `code .`.
 13. Presionar `CTRL+SHIFT+P`.
 14. Seleccionar `ESP-IDF: Add vscode Configuration Folder`.
+15. Copiar el contenido del archivo fuente `leer_pulsador.c` que está en el repositorio.
+16. Pegar el contenido en el archivo fuente `leer_pulsador.c` del proyecto.
 
 ## Agregar el componente [espressif/button](https://components.espressif.com/components/espressif/button/versions/3.3.1)
 
@@ -73,6 +75,8 @@ El paso anterior crea:
 3. Ejecutar `idf.py -p COM10 flash monitor`.
 4. Liberar el botón `IO0`.
 5. Presionar `CTRL+]` para cerrar el monitor.
+
+![Monitor](monitor.png)
 
 ## Documentación oficial
 
