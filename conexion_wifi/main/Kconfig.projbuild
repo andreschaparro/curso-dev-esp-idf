@@ -1,8 +1,8 @@
 menu "Example Configuration"
-    
+
     menu "STA Configuration"
         comment "STA Configuration"
-        
+
         config ESP_WIFI_REMOTE_AP_SSID
             string "WiFi Remote AP SSID"
             default "otherapssid"

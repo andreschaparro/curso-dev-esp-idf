@@ -21,20 +21,43 @@
 15. Copiar el contenido del archivo fuente `conexion_wifi.c` que está en el repositorio.
 16. Pegar el contenido en el archivo fuente `conexion_wifi.c` del proyecto.
 
-## Crear un menú de configuración dentro de la interfaz de usuario `Kconfig`
+## Guardar la configuración inicial del proyecto
+
+1. Ejecutar `idf.py save-defconfig`.
+
+El paso anterior crea el archivo `sdkconfig.default` donde se guarda la configuración actual del proyecto.
+
+## Habilitar el linter del lenguaje Kconfig en Visual Studio Code
+
+1. Ir a `File>Preferences>Settings`.
+2. Marcar el checkbox `useIDFKconfigStyle`.
+
+## Crear nuevas opciones de configuración para el proyecto
 
 1. Crear el archivo `Kconfig.projbuild` dentro del componente `main`.
 2. Copiar el contenido del archivo `Kconfig.projbuild` que está en el repositorio.
 3. Pegar el contenido en el archivo `Kconfig.projbuild` del proyecto.
-4. Ejecutar `idf.py menuconfig`.
-5. Ir a `Example Configuration ---> STA Configuration ---> WiFi Remote AP SSID`.
-6. Ingresar el nombre de nuestra red Wi-Fi.
-7. Ir a `Example Configuration ---> STA Configuration ---> WiFi Remote AP Password`.
-8. Ingresar la contraseña de nuestra red Wi-Fi.
-9. Presionar `ESC`.
-10. Presionar `ESC`.
-11. Presionar `ESC`.
-12. Presionar `Y`.
+
+## Correr el fixer del lenguaje Kconfig
+
+1. Ejecutar `python -m kconfcheck main/Kconfig.projbuild`.
+
+Si hay errores, el paso anterior crea una versión corregida del archivo `Kconfig.projbuild` llamada `Kconfig.projbuild.new`.
+
+2. Copiar el contenido de `Kconfig.projbuild.new` en `Kconfig.projbuild`.
+3. Borrar el archivo `Kconfig.projbuild.new`.
+
+## Configurar las nuevas opciones del proyecto
+
+1. Ejecutar `idf.py menuconfig`.
+2. Ir a `Example Configuration ---> STA Configuration ---> WiFi Remote AP SSID`.
+3. Ingresar el nombre de nuestra red Wi-Fi.
+4. Ir a `Example Configuration ---> STA Configuration ---> WiFi Remote AP Password`.
+5. Ingresar la contraseña de nuestra red Wi-Fi.
+6. Presionar `ESC`.
+7. Presionar `ESC`.
+8. Presionar `ESC`.
+9. Presionar `Y`.
 
 ## Compilar, grabar, y monitorear el proyecto
 
@@ -44,7 +67,12 @@
 4. Liberar el botón `IO0`.
 5. Presionar `CTRL+]` para cerrar el monitor.
 
-!![Monitor](monitor.png)
+![Monitor](monitor.png)
+
+## Restaurar la configuración inicial del proyecto
+
+1. Borrar el archivo `sdkconfig`.
+2. Ejecutar `idf.py menuconfig`.
 
 ## Documentación oficial
 
