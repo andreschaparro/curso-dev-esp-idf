@@ -21,11 +21,11 @@
 15. Copiar el contenido del archivo fuente `conexion_wifi.c` que está en el repositorio.
 16. Pegar el contenido en el archivo fuente `conexion_wifi.c` del proyecto.
 
-## Guardar la configuración inicial del proyecto
+## Crear la configuración inicial del proyecto
 
 1. Ejecutar `idf.py save-defconfig`.
 
-El paso anterior crea el archivo `sdkconfig.default` donde se guarda la configuración actual del proyecto.
+El paso anterior crea el archivo `sdkconfig.default` que toma la configuración actual del proyecto y la establece como la inicial.
 
 ## Habilitar el linter del lenguaje Kconfig en Visual Studio Code
 
