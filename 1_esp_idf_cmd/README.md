@@ -14,6 +14,26 @@ Los pasos anteriores crean:
   - El archivo de registro `CmakeLists.txt`.
 - Un archivo `CmakeLists.txt` para el proyecto.
 
+## Configurar el proyecto
+
+1. Ejecutar `idf.py set-target esp32`.
+2. Ejecutar `idf.py menuconfig` para abrir la interfaz de usuario `Kconfig`.
+3. Ir a `Serial flasher config ---> Flash size`.
+4. Seleccionar `4 MB`.
+
+![Flash size](flash_size.png)
+
+5. Presionar `ESC`.
+6. Presionar `ESC`.
+7. Presionar `Y`.
+
+Los pasos anteriores crean:
+
+- El archivo `sdkconfig` que contiene la configuración del proyecto.
+- La carpeta `build`.
+
+8. Utilizar el siguiente archivo [.gitignore](https://github.com/espressif/esp-idf/blob/release/v5.2/.gitignore) para no observar `build` con Git.
+
 ## Programar utilizando la extensión ESP-IDF de Visual Studio Code
 
 1. Ejecutar `cd hola_mundo`.
@@ -27,26 +47,6 @@ Los pasos anteriores crean la carpeta `.vscode` que contiene los archivos de con
 6. Modificar el contenido de `hola_mundo.c` desde Visual Studio Code:
 
 ![Proyecto](proyecto.png)
-
-## Configurar el proyecto
-
-1. Ejecutar `idf.py set-target esp32`.
-2. Ejecutar `idf.py menuconfig` para abrir la interfaz de usuario `Kconfig`.
-3. Ir a `Serial flasher config ---> Flash size`.
-4. Seleccionar `4 MB`.
-
-![Flash size](flash_size.png)
-
-6. Presionar `ESC`.
-7. Presionar `ESC`.
-8. Presionar `Y`.
-
-Los pasos anteriores crean:
-
-- El archivo `sdkconfig` que contiene la configuración del proyecto.
-- La carpeta `build`.
-
-9. Utilizar el siguiente archivo [.gitignore](https://github.com/espressif/esp-idf/blob/release/v5.2/.gitignore) para no observar `build` con Git.
 
 ## Compilar el proyecto
 
