@@ -82,4 +82,4 @@ El paso anterior crea:
 
 - [IDF Component Manager](https://docs.espressif.com/projects/esp-idf/en/v5.2.2/esp32/api-guides/tools/idf-component-manager.html).
 - [IDF Frontend - idf.py](https://docs.espressif.com/projects/esp-idf/en/v5.2.2/esp32/api-guides/tools/idf-py.html).
-- [Button Power Save Example](https://github.com/espressif/esp-iot-solution/blob/master/examples/get-started/button_power_save/main/main.c)
+- [Button](https://docs.espressif.com/projects/esp-iot-solution/en/latest/input_device/button.html)

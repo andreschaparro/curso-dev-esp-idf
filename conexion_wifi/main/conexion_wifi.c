@@ -15,15 +15,15 @@ static const char *TAG = "main";
 
 static EventGroupHandle_t event_group = NULL; // FreeRTOS event group to signal when we are connected
 
-static void default_nvs_init();
-static void wifi_init_sta();
+static void default_nvs_init(void);
+static void wifi_init_sta(void);
 static void ip_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data);
 static void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data);
 
 void app_main(void)
 {
-    event_group = xEventGroupCreate();
-    default_nvs_init();                                                                                                  // Initialize event group
+    event_group = xEventGroupCreate(); // Initialize event group
+    default_nvs_init();
     ESP_ERROR_CHECK(esp_netif_init());                                                                                   // Initialize TCP/IP
     ESP_ERROR_CHECK(esp_event_loop_create_default());                                                                    // Initialize the event loop
     ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT, IP_EVENT_STA_GOT_IP, &ip_event_handler, NULL, NULL));  // Register our event handler for IP related events
@@ -33,7 +33,7 @@ void app_main(void)
     ESP_LOGI(TAG, "Hola Mundo!");
 }
 
-static void default_nvs_init()
+static void default_nvs_init(void)
 {
     esp_err_t ret = nvs_flash_init();                                             // Initialize NVS partition
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) // NVS partition was truncated and needs to be erased
@@ -44,7 +44,7 @@ static void default_nvs_init()
     ESP_ERROR_CHECK(ret);
 }
 
-static void wifi_init_sta() // Start Wi-Fi in station mode
+static void wifi_init_sta(void) // Start Wi-Fi in station mode
 {
     esp_netif_create_default_wifi_sta();
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();

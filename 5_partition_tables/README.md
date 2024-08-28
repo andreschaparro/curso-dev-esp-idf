@@ -1,11 +1,11 @@
-# Capítulo 6: Partition Tables
+# Capítulo 5: Partition Tables
 
-## Crear el proyecto **aprovisionamiento_ble**
+## Crear el proyecto **aprovisionamiento_wifi**
 
 1. Abrir la `ESP-IDF CMD`.
 2. Ejecutar `cd C:\Users\achaparro\curso-dev-esp-idf`.
-3. Ejecutar `idf.py create-project aprovisionamiento_ble`.
-4. Ejecutar `cd aprovisionamiento_ble`.
+3. Ejecutar `idf.py create-project aprovisionamiento_wifi`.
+4. Ejecutar `cd aprovisionamiento_wifi`.
 5. Ejecutar `idf.py set-target esp32`.
 6. Ejecutar `idf.py menuconfig`.
 7. Ir a `Serial flasher config ---> Flash size`.
