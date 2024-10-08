@@ -6,6 +6,7 @@
 
 1. Ejecutar `cd C:\Users\achaparro\curso-dev-esp-idf`.
 2. Ejecutar `idf.py create-project hola_mundo`.
+3. Ejecutar `cd hola_mundo`.
 
 Los pasos anteriores crean:
 
@@ -36,15 +37,14 @@ Los pasos anteriores crean:
 
 ## Programar utilizando la extensión ESP-IDF de Visual Studio Code
 
-1. Ejecutar `cd hola_mundo`.
-2. Ejecutar `code .`.
-3. Presionar `CTRL+SHIFT+P`.
-4. Seleccionar `ESP-IDF: Add vscode Configuration Folder`.
+1. Ejecutar `code .`.
+2. Presionar `CTRL+SHIFT+P`.
+3. Seleccionar `ESP-IDF: Add vscode Configuration Folder`.
 
 Los pasos anteriores crean la carpeta `.vscode` que contiene los archivos de configuración de Visual Studio Code.
 
-5. Utilizar el siguiente archivo [.gitignore](https://github.com/espressif/esp-idf/blob/release/v5.2/.gitignore) para no observar `.vscode` con Git.
-6. Modificar el contenido de `hola_mundo.c` desde Visual Studio Code:
+4. Descargar el archivo [.gitignore](https://github.com/espressif/esp-idf/blob/release/v5.2/.gitignore) para trabajar con Git.
+5. Modificar el contenido de `hola_mundo.c` desde Visual Studio Code:
 
 ![Proyecto](proyecto.png)
 
